@@ -1,35 +1,25 @@
 # Git Commit Convention
 
+## Summary
 
+* [상태]-[설명] 형식으로 메세지 작성  
+* [상태: Add, Update, Fix, Refactor, Delete] - [설명: 한글로 작성]
+* 브랜치 관리는 `Master`와 `feature` 브랜치를 사용 
+* PR 전 충돌 해결 
+* PR Merge 할 때, 리뷰 필수 
+* 본인 PR은 본인이 Merge가능 
+* Merge와 Rebase는 개인판단에 따라 사용 
 
+## Suggestion
 
+### 혜민
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Suggestions
-
-## 혜민
-- 첫줄에 제목(어떤 변경인지), 그 다음줄에 커밋이유, 바뀐부분이 무엇인지 작성 
-- 제목에는 변경에 대한 설명을 한눈에 이해할 수 있게 [상태]-[바뀐 부분 간략하게] 이런식으로 작성
-- 예를 들어, Update api to read users info (?).. 이런 식 한글이라면 "사용자 정보 조회 api 수정"
-- 한글로 메세지를 작성할지 영어로 할지
+- [상태]-[설명] 형식으로 메세지 작성
+- [상태: Add, Update, Fix, Refactor, Delete] - [설명: 한글로 작성]
 - 기능 단위 커밋
 
-## 새글
+### 새글
+
 - PR을 하기 전에 충돌을 해결한다.
 - PR을 Merge 할 때는 리뷰어가 리뷰를 해줘야 한다.
 - 본인 PR은 본인이 Merge 한다.
