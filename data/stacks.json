@@ -1,0 +1,56 @@
+[
+  {
+    "name": "JAVASCRIPT",
+    "desc": "basic language",
+    "image": "image",
+    "type": "general"
+  },
+  {
+    "name": "PYTHON",
+    "desc": "basic language",
+    "image": "image",
+    "type": "general"
+  },
+  {
+    "name": "JAVA",
+    "desc": "basic language",
+    "image": "image",
+    "type": "general"
+  },
+  {
+    "name": "NODEJS",
+    "desc": "basic language",
+    "image": "image",
+    "type": "backend"
+  },
+  {
+    "name": "DJANGO",
+    "desc": "basic language",
+    "image": "image",
+    "type": "backend"
+  },
+  {
+    "name": "SPRING",
+    "desc": "basic language",
+    "image": "image",
+    "type": "backend"
+  },
+  {
+    "name": "VUE",
+    "desc": "basic language",
+    "image": "image",
+    "type": "frontend"
+  },
+  {
+    "name": "REACT",
+    "desc": "basic language",
+    "image": "image",
+    "type": "frontend"
+  },
+  {
+    "name": "ANGULAR",
+    "desc": "basic language",
+    "image": "image",
+    "type": "frontend"
+  }
+]
