@@ -1,0 +1,11 @@
+[
+  {
+    "name": "GOOGLE",
+    "desc": "SNS company",
+    "link": "http://google.com",
+    "logo": "logo",
+    "stacks": [],
+    "isAuthenticated": false,
+    "likes": []
+  }
+]
