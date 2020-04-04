@@ -11,6 +11,7 @@ module.exports = {
     "no-bitwise": ["error", { allow: ["~"] }],
     "no-underscore-dangle": ["error", { allow: ["_id"] }],
     "spaced-comment": ["error", "always", { markers: ["/", "//"] }],
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    camelcase: 0
   }
 };

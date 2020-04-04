@@ -2,11 +2,13 @@ const AppError = require('utils/appError');
 const testRouter = require('./test');
 const stackRouter = require('./stack');
 const companyRouter = require('./company');
+const aggregateRouter = require('./aggregate');
 
 const router = (app) => {
   app.use('/test', testRouter);
   app.use('/stack', stackRouter);
   app.use('/company', companyRouter);
+  app.use('/aggregate', aggregateRouter);
 
   app.all('*', (req, res, next) => {
     const err = {
