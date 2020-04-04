@@ -24,7 +24,37 @@ console.log(companies);
 
 const insertStacks = async () => {
   await Stack.create(stacks);
-  console.log('inserted stacks data');
+  console.log('inserted stacks dev data');
 };
 
-insertStacks();
+const insertCompanies = async () => {
+  await Company.create(companies);
+  console.log('inserted companies dev data');
+};
+
+(async () => {
+  await insertStacks();
+  await insertCompanies();
+
+  const originalCompanies = await Company.find();
+  const originalStacks = await Stack.find();
+
+  originalCompanies.forEach(async (e) => {
+    const randNum = Math.ceil(Math.random() * (8 - 6) + 6);
+    const randStacksArr = [];
+    const compStacksArr = [];
+
+    new Array(randNum).fill(0).forEach(async (_) => {
+      const randStackIdx = Math.ceil(Math.random() * originalStacks.length - 1);
+
+      if (!~randStacksArr.indexOf(randStackIdx)) {
+        randStacksArr.push(randStackIdx);
+        const currentStackId = originalStacks[randStackIdx]._id;
+        compStacksArr.push(currentStackId);
+        await Stack.updateOne({ _id: currentStackId }, { $push: { companies: e._id } });
+      }
+    });
+
+    await Company.updateOne({ _id: e._id }, { $set: { stacks: compStacksArr } });
+  });
+})();
