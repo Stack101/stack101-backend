@@ -18,7 +18,7 @@ const stackSchema = new Schema(
 );
 
 stackSchema.virtual('cnt').get(function () {
-  return (this.companies && this.companies.length) || 0;
+  if (this.companies) return this.companies.length || 0;
 });
 
 module.exports = mongoose.model('Stack', stackSchema);
