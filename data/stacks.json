@@ -1,56 +1,66 @@
 [
   {
-    "name": "JAVASCRIPT",
-    "desc": "basic language",
+    "name": "Javascript",
+    "description": "basic language",
     "image": "image",
-    "type": "general"
+    "category": "frontend",
+    "sub_category": "language",
+    "companies": []
   },
   {
-    "name": "PYTHON",
-    "desc": "basic language",
+    "name": "Javascript",
+    "description": "basic language",
     "image": "image",
-    "type": "general"
+    "category": "backend",
+    "sub_category": "language",
+    "companies": []
   },
   {
-    "name": "JAVA",
-    "desc": "basic language",
+    "name": "Python",
+    "description": "basic language",
     "image": "image",
-    "type": "general"
+    "category": "backend",
+    "sub_category": "language",
+    "companies": []
   },
   {
-    "name": "NODEJS",
-    "desc": "basic language",
+    "name": "Nodejs",
+    "description": "javascript backend framework",
     "image": "image",
-    "type": "backend"
+    "category": "backend",
+    "sub_category": "framework",
+    "companies": []
   },
   {
-    "name": "DJANGO",
-    "desc": "basic language",
+    "name": "Django",
+    "description": "python backend framework",
     "image": "image",
-    "type": "backend"
+    "category": "backend",
+    "sub_category": "framework",
+    "companies": []
   },
   {
-    "name": "SPRING",
-    "desc": "basic language",
+    "name": "React",
+    "description": "javascript frontend framework",
     "image": "image",
-    "type": "backend"
+    "category": "frontend",
+    "sub_category": "framework",
+    "companies": []
   },
   {
-    "name": "VUE",
-    "desc": "basic language",
+    "name": "Vue",
+    "description": "javascript frontend framework",
     "image": "image",
-    "type": "frontend"
+    "category": "frontend",
+    "sub_category": "framework",
+    "companies": []
   },
   {
-    "name": "REACT",
-    "desc": "basic language",
+    "name": "Angular",
+    "description": "javascript frontend framework",
     "image": "image",
-    "type": "frontend"
-  },
-  {
-    "name": "ANGULAR",
-    "desc": "basic language",
-    "image": "image",
-    "type": "frontend"
+    "category": "frontend",
+    "sub_category": "framework",
+    "companies": []
   }
 ]
