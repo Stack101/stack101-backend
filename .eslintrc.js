@@ -10,6 +10,7 @@ module.exports = {
   rules: {
     "no-bitwise": ["error", { allow: ["~"] }],
     "no-underscore-dangle": ["error", { allow: ["_id"] }],
-    "spaced-comment": ["error", "always", { markers: ["/", "//"] }]
+    "spaced-comment": ["error", "always", { markers: ["/", "//"] }],
+    "import/prefer-default-export": "off"
   }
 };
