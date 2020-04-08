@@ -3,12 +3,14 @@ const testRouter = require('./test');
 const stackRouter = require('./stack');
 const companyRouter = require('./company');
 const statisticsRouter = require('./statistics');
+const searchRouter = require('./search');
 
 const router = (app) => {
   app.use('/test', testRouter);
   app.use('/stack', stackRouter);
   app.use('/company', companyRouter);
   app.use('/statistics', statisticsRouter);
+  app.use('/search', searchRouter);
 
   app.all('*', (req, res, next) => {
     const err = {
