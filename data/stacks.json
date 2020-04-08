@@ -2,65 +2,82 @@
   {
     "name": "Javascript",
     "description": "basic language",
-    "image": "image",
-    "category": "frontend",
-    "sub_category": "language",
+    "logo": "image",
+    "job_type": "developer",
+    "job_detail": "frontend",
+    "category": "language",
     "companies": []
   },
   {
     "name": "Javascript",
     "description": "basic language",
-    "image": "image",
-    "category": "backend",
-    "sub_category": "language",
+    "logo": "image",
+    "job_type": "developer",
+    "job_detail": "backend",
+    "category": "language",
     "companies": []
   },
   {
     "name": "Python",
     "description": "basic language",
-    "image": "image",
-    "category": "backend",
-    "sub_category": "language",
+    "logo": "image",
+    "job_type": "developer",
+    "job_detail": "backend",
+    "category": "language",
     "companies": []
   },
   {
     "name": "Nodejs",
     "description": "javascript backend framework",
-    "image": "image",
-    "category": "backend",
-    "sub_category": "framework",
+    "logo": "image",
+    "job_type": "developer",
+    "job_detail": "backend",
+    "category": "framework",
     "companies": []
   },
   {
     "name": "Django",
     "description": "python backend framework",
-    "image": "image",
-    "category": "backend",
-    "sub_category": "framework",
+    "logo": "image",
+    "job_type": "developer",
+    "job_detail": "backend",
+    "category": "framework",
     "companies": []
   },
   {
     "name": "React",
     "description": "javascript frontend framework",
-    "image": "image",
-    "category": "frontend",
-    "sub_category": "framework",
+    "logo": "image",
+    "job_type": "developer",
+    "job_detail": "frontend",
+    "category": "framework",
     "companies": []
   },
   {
     "name": "Vue",
     "description": "javascript frontend framework",
-    "image": "image",
-    "category": "frontend",
-    "sub_category": "framework",
+    "logo": "image",
+    "job_type": "developer",
+    "job_detail": "frontend",
+    "category": "framework",
     "companies": []
   },
   {
     "name": "Angular",
     "description": "javascript frontend framework",
-    "image": "image",
-    "category": "frontend",
-    "sub_category": "framework",
+    "logo": "image",
+    "job_type": "developer",
+    "job_detail": "frontend",
+    "category": "framework",
+    "companies": []
+  },
+  {
+    "name": "Figma",
+    "description": "figma is figma",
+    "logo": "image",
+    "job_type": "designer",
+    "job_detail": "ux",
+    "category": "tool",
     "companies": []
   }
 ]
