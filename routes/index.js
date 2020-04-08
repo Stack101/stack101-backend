@@ -8,7 +8,7 @@ const router = (app) => {
   app.use('/test', testRouter);
   app.use('/stack', stackRouter);
   app.use('/company', companyRouter);
-  app.use('/aggregate', statisticsRouter);
+  app.use('/statistics', statisticsRouter);
 
   app.all('*', (req, res, next) => {
     const err = {
