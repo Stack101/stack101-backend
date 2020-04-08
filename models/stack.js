@@ -7,9 +7,10 @@ const stackSchema = new Schema(
     name: { type: String, required: true },
     description: { type: String, required: true },
     logo: String,
-    companies: [{ type: Schema.Types.ObjectId, ref: 'Company' }],
+    job_type: { type: String, required: true },
+    job_detail: { type: String, required: true },
     category: { type: String, required: true },
-    sub_category: { type: String, required: true },
+    companies: [{ type: Schema.Types.ObjectId, ref: 'Company' }],
   },
   {
     toJSON: { virtuals: true },
