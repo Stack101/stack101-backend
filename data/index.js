@@ -17,7 +17,7 @@ mongoose
   });
 
 const stacks = JSON.parse(fs.readFileSync(`${__dirname}/stacks.json`, 'utf-8'));
-const companies = JSON.parse(fs.readFileSync(`${__dirname}/company.json`, 'utf-8'));
+const companies = JSON.parse(fs.readFileSync(`${__dirname}/companies.json`, 'utf-8'));
 
 console.log(stacks);
 console.log(companies);
