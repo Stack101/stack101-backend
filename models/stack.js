@@ -14,7 +14,6 @@ const stackSchema = new Schema(
   },
   {
     toJSON: { virtuals: true },
-    toObject: { virtuals: true },
   },
 );
 
