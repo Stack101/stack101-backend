@@ -1,83 +1,105 @@
 [
-  {
-    "name": "Javascript",
-    "description": "basic language",
-    "logo": "image",
-    "job_type": "developer",
-    "job_detail": "frontend",
-    "category": "language",
-    "companies": []
-  },
-  {
-    "name": "Javascript",
-    "description": "basic language",
-    "logo": "image",
-    "job_type": "developer",
-    "job_detail": "backend",
-    "category": "language",
-    "companies": []
-  },
-  {
-    "name": "Python",
-    "description": "basic language",
-    "logo": "image",
-    "job_type": "developer",
-    "job_detail": "backend",
-    "category": "language",
-    "companies": []
-  },
-  {
-    "name": "Nodejs",
-    "description": "javascript backend framework",
-    "logo": "image",
-    "job_type": "developer",
-    "job_detail": "backend",
-    "category": "framework",
-    "companies": []
-  },
-  {
-    "name": "Django",
-    "description": "python backend framework",
-    "logo": "image",
-    "job_type": "developer",
-    "job_detail": "backend",
-    "category": "framework",
-    "companies": []
-  },
-  {
-    "name": "React",
-    "description": "javascript frontend framework",
-    "logo": "image",
-    "job_type": "developer",
-    "job_detail": "frontend",
-    "category": "framework",
-    "companies": []
-  },
-  {
-    "name": "Vue",
-    "description": "javascript frontend framework",
-    "logo": "image",
-    "job_type": "developer",
-    "job_detail": "frontend",
-    "category": "framework",
-    "companies": []
-  },
-  {
-    "name": "Angular",
-    "description": "javascript frontend framework",
-    "logo": "image",
-    "job_type": "developer",
-    "job_detail": "frontend",
-    "category": "framework",
-    "companies": []
-  },
-  {
-    "name": "Figma",
-    "description": "figma is figma",
-    "logo": "image",
-    "job_type": "designer",
-    "job_detail": "ux",
-    "category": "tool",
-    "companies": []
-  }
+    {
+        "_id": {
+            "$oid": "5e8df68a9e10880d7c7e85f6"
+        },
+        "name": "Javascript",
+        "description": "basic language",
+        "image": "image",
+        "category": "frontend",
+        "sub_category": "language",
+        "companies": [
+            {
+                "$oid": "5e8df7369e10880d7c7e8601"
+            },
+            {
+                "$oid": "5e8df7369e10880d7c7e8602"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5e8df68a9e10880d7c7e85f7"
+        },
+        "name": "Javascript",
+        "description": "basic language",
+        "image": "image",
+        "category": "backend",
+        "sub_category": "language",
+        "companies": [
+            {
+                "$oid": "5e8df7369e10880d7c7e8601"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5e8df68a9e10880d7c7e85f8"
+        },
+        "name": "Python",
+        "description": "basic language",
+        "image": "image",
+        "category": "backend",
+        "sub_category": "language",
+        "companies": [
+            {
+                "$oid": "5e8df7369e10880d7c7e8602"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "5e8df68a9e10880d7c7e85f9"
+        },
+        "name": "Nodejs",
+        "description": "javascript backend framework",
+        "image": "image",
+        "category": "backend",
+        "sub_category": "framework",
+        "companies": []
+    },
+    {
+        "_id": {
+            "$oid": "5e8df68a9e10880d7c7e85fa"
+        },
+        "name": "Django",
+        "description": "python backend framework",
+        "image": "image",
+        "category": "backend",
+        "sub_category": "framework",
+        "companies": []
+    },
+    {
+        "_id": {
+            "$oid": "5e8df68a9e10880d7c7e85fb"
+        },
+        "name": "React",
+        "description": "javascript frontend framework",
+        "image": "image",
+        "category": "frontend",
+        "sub_category": "framework",
+        "companies": []
+    },
+    {
+        "_id": {
+            "$oid": "5e8df68a9e10880d7c7e85fc"
+        },
+        "name": "Vue",
+        "description": "javascript frontend framework",
+        "image": "image",
+        "category": "frontend",
+        "sub_category": "framework",
+        "companies": []
+    },
+    {
+        "_id": {
+            "$oid": "5e8df68a9e10880d7c7e85fd"
+        },
+        "name": "Angular",
+        "description": "javascript frontend framework",
+        "image": "image",
+        "category": "frontend",
+        "sub_category": "framework",
+        "companies": []
+    }
 ]
