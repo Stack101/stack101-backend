@@ -1,0 +1,30 @@
+﻿Name,Description,Logo,Job_Type,Job_Detail,Category
+Javascript,javascript는 어쩌고,image link,Developer,Frontend,Language
+Javascript,javascript는 어쩌고,image link,Developer,Backend,Language
+Typescript,Typescript는~,image link,Developer,Frontend,Language
+React,React는~,image link,Developer,Frontend,Framework
+Vue.js,Vue.js는~,image link,Developer,Frontend,Framework
+jQuery,jQuery는~,image link,Developer,Frontend,Framework
+Node.js,Node.js는~,image link,Developer,Backend,Framework
+Ruby,Ruby는~,image link,Developer,Backend,Language
+Go,Go는~,image link,Developer,Backend,Language
+Python,Python은~,image link,Developer,Backend,Language
+C#,C#은~,image link,Developer,Backend,Language
+Kotlin,Kotlin은~,image link,Developer,Backend,Language
+Kotlin,Kotlin은~,image link,Developer,Android,Language
+Java,Java는~,image link,Developer,Backend,Language
+PHP,PHP는~,image link,Developer,Backend,Language
+Rails,Rails는~,image link,Developer,Backend,Framework
+.net,.net은~,image link,Developer,Backend,Framework
+Spring Boot,Spring Boot는~,image link,Developer,Backend,Framework
+Spring,Spring은~,image link,Developer,Backend,Framework
+React-Native,React Native는~,image link,Developer,Android,Framework
+Swift,Swift는~,image link,Developer,IOS,Language
+Objective-C,Objective-C는~,image link,Developer,IOS,Language
+Sketch,Sketch는~,image link,Designer,UI/UX,Tool
+Zeplin,Zeplin은~,image link,Designer,UI/UX,Tool
+Figma,Figma는~,image link,Designer,UI/UX,Tool
+Adobe,Adobe는~,image link,Designer,UI/UX,Tool
+InVision,InVIsion은~,image link,Designer,UI/UX,Tool
+Overflow,Overflow는~,image link,Designer,UI/UX,Tool
+XD,XD는~,image link,Designer,UI/UX,Tool
