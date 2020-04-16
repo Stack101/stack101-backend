@@ -18,27 +18,46 @@ const insertStacks = async () => {
 // 참조 ObjectId 추가
 const updateRefId = async (element) => {
   // 프론트엔드 언어 스택
-  element.Frontend_Language.split(',').forEach(async (v) => {
-    // 해당 스택의 id 조회
-    const result = await Stack.findOne({ name: v, job_detail: 'Frontend' }, '_id');
+  if (element.Frontend_Framework) {
+    element.Frontend_Language.split(',').forEach(async (v) => {
+      // 해당 스택의 id 조회
+      const result = await Stack.findOne({ name: v, job_detail: 'Frontend' }, '_id');
 
-    // 회사 정보에 스택 ObjectId정보 push
-    const updatedResult = await Company.findOneAndUpdate(
-      { name: element.Name },
-      { $push: { stacks: result._id } },
-    );
+      // 회사 정보에 스택 ObjectId정보 push
+      const updatedResult = await Company.findOneAndUpdate(
+        { name: element.Name },
+        { $push: { stacks: result._id } },
+      );
 
-    // 스택 정보에 해당 회사 ObjectId정보 push
-    await Stack.findOneAndUpdate(
-      { _id: result._id },
-      { $push: { companies: updatedResult._id } },
-    );
-  });
+      // 스택 정보에 해당 회사 ObjectId정보 push
+      await Stack.findOneAndUpdate(
+        { _id: result._id },
+        { $push: { companies: updatedResult._id } },
+      );
+    });
+  }
 
   // 프론트엔드 프레임워크 스택
-  element.Frontend_Framework.split(',').forEach(async (v) => {
-    const result = await Stack.findOne({ name: v, job_detail: 'Frontend' }, '_id');
-    if (result !== null) {
+  if (element.Frontend_Framework) {
+    element.Frontend_Framework.split(',').forEach(async (v) => {
+      const result = await Stack.findOne({ name: v, job_detail: 'Frontend' }, '_id');
+      if (result !== null) {
+        const updatedResult = await Company.findOneAndUpdate(
+          { name: element.Name },
+          { $push: { stacks: result._id } },
+        );
+        await Stack.findOneAndUpdate(
+          { _id: result._id },
+          { $push: { companies: updatedResult._id } },
+        );
+      }
+    });
+  }
+
+  // 백엔드 언어 스택
+  if (element.Backend_Language) {
+    element.Backend_Language.split(',').forEach(async (v) => {
+      const result = await Stack.findOne({ name: v, job_detail: 'Backend' }, '_id');
       const updatedResult = await Company.findOneAndUpdate(
         { name: element.Name },
         { $push: { stacks: result._id } },
@@ -47,73 +66,83 @@ const updateRefId = async (element) => {
         { _id: result._id },
         { $push: { companies: updatedResult._id } },
       );
-    }
-  });
-
-  // 백엔드 언어 스택
-  element.Backend_Language.split(',').forEach(async (v) => {
-    const result = await Stack.findOne({ name: v, job_detail: 'Backend' }, '_id');
-    const updatedResult = await Company.findOneAndUpdate(
-      { name: element.Name },
-      { $push: { stacks: result._id } },
-    );
-    await Stack.findOneAndUpdate(
-      { _id: result._id },
-      { $push: { companies: updatedResult._id } },
-    );
-  });
+    });
+  }
 
   // 백엔드 프레임워크 스택
-  element.Backend_Framework.split(',').forEach(async (v) => {
-    const result = await Stack.findOne({ name: v, job_detail: 'Backend' }, '_id');
-    const updatedResult = await Company.findOneAndUpdate(
-      { name: element.Name },
-      { $push: { stacks: result._id } },
-    );
-    await Stack.findOneAndUpdate(
-      { _id: result._id },
-      { $push: { companies: updatedResult._id } },
-    );
-  });
+  if (element.Backend_Framework) {
+    element.Backend_Framework.split(',').forEach(async (v) => {
+      const result = await Stack.findOne({ name: v, job_detail: 'Backend' }, '_id');
+      const updatedResult = await Company.findOneAndUpdate(
+        { name: element.Name },
+        { $push: { stacks: result._id } },
+      );
+      await Stack.findOneAndUpdate(
+        { _id: result._id },
+        { $push: { companies: updatedResult._id } },
+      );
+    });
+  }
 
   // 안드로이드 스택
-  element.Android.split(',').forEach(async (v) => {
-    const result = await Stack.findOne({ name: v, job_detail: 'Android' }, '_id');
-    const updatedResult = await Company.findOneAndUpdate(
-      { name: element.Name },
-      { $push: { stacks: result._id } },
-    );
-    await Stack.findOneAndUpdate(
-      { _id: result._id },
-      { $push: { companies: updatedResult._id } },
-    );
-  });
+  if (element.App) {
+    element.App.split(',').forEach(async (v) => {
+      const result = await Stack.findOne({ name: v, job_detail: 'App' }, '_id');
+      const updatedResult = await Company.findOneAndUpdate(
+        { name: element.Name },
+        { $push: { stacks: result._id } },
+      );
+      await Stack.findOneAndUpdate(
+        { _id: result._id },
+        { $push: { companies: updatedResult._id } },
+      );
+    });
+  }
 
-  // IOS 스택
-  element.IOS.split(',').forEach(async (v) => {
-    const result = await Stack.findOne({ name: v, job_detail: 'IOS' }, '_id');
-    const updatedResult = await Company.findOneAndUpdate(
-      { name: element.Name },
-      { $push: { stacks: result._id } },
-    );
-    await Stack.findOneAndUpdate(
-      { _id: result._id },
-      { $push: { companies: updatedResult._id } },
-    );
-  });
+  // 프로토타이핑 디자인 툴 스택
+  if (element.Prototyping) {
+    element.Prototyping.split(',').forEach(async (v) => {
+      const result = await Stack.findOne({ name: v, category: 'Prototyping' }, '_id');
+      const updatedResult = await Company.findOneAndUpdate(
+        { name: element.Name },
+        { $push: { stacks: result._id } },
+      );
+      await Stack.findOneAndUpdate(
+        { _id: result._id },
+        { $push: { companies: updatedResult._id } },
+      );
+    });
+  }
 
-  // 디자인 툴 스택
-  element.DesignTool.split(',').forEach(async (v) => {
-    const result = await Stack.findOne({ name: v, category: 'Tool' }, '_id');
-    const updatedResult = await Company.findOneAndUpdate(
-      { name: element.Name },
-      { $push: { stacks: result._id } },
-    );
-    await Stack.findOneAndUpdate(
-      { _id: result._id },
-      { $push: { companies: updatedResult._id } },
-    );
-  });
+  // Management 디자인 툴 스택
+  if (element.Management) {
+    element.Management.split(',').forEach(async (v) => {
+      const result = await Stack.findOne({ name: v, category: 'Management' }, '_id');
+      const updatedResult = await Company.findOneAndUpdate(
+        { name: element.Name },
+        { $push: { stacks: result._id } },
+      );
+      await Stack.findOneAndUpdate(
+        { _id: result._id },
+        { $push: { companies: updatedResult._id } },
+      );
+    });
+  }
+
+  // Experience 툴 스택
+  if (element.Experience) {
+    element.Experience.split(',').forEach(async (v) => {
+      const result = await Stack.findOne({ name: v, category: 'Experience' }, '_id');
+      const updatedResult = await Company.findOneAndUpdate(
+        { name: element.Name },
+        { $push: { stacks: result._id } },
+      );
+      await Stack.findOneAndUpdate(
+        { _id: result._id },
+        { $push: { companies: updatedResult._id } },
+      );
+    });
+  }
 };
 
 // 회사 정보 추가
