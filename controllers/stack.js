@@ -15,13 +15,14 @@ exports.getAllStacks = catchAsync(async (req, res) => {
   if (category) {
     queryObj.category = category;
   }
+  
   let stacks;
   if (limit) {
     stacks = await Stack.find(queryObj).sort('-cnt').limit(limit);
   } else {
     stacks = await Stack.find(queryObj).sort('-cnt');
   }
-  // 파이프라인 활용
+  
   res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: stacks });
 });
 
