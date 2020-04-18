@@ -4,6 +4,7 @@ const AppError = require('utils/appError');
 
 exports.getAllCompanies = catchAsync(async (req, res) => {
   const { category, stack, name } = req.query;
+  const { limit } = req.query;
   const queryObj = {};
   if (category) {
     queryObj.category = category;
@@ -14,7 +15,13 @@ exports.getAllCompanies = catchAsync(async (req, res) => {
   if (name) {
     queryObj.name = name;
   }
-  const companies = await Company.find(queryObj);
+
+  let companies;
+  if (limit) {
+    companies = await Company.find(queryObj).sort('-cnt').limit(limit);
+  } else {
+    companies = await Company.find(queryObj).sort('-cnt');
+  }
 
   res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: companies });
 });
