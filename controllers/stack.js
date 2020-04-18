@@ -15,7 +15,7 @@ exports.getAllStacks = catchAsync(async (req, res) => {
     queryObj.category = category;
   }
   const stacks = await Stack.find(queryObj);
-  // 파이프라인 활용
+
   res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: stacks });
 });
 
