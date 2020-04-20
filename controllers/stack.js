@@ -15,14 +15,45 @@ exports.getAllStacks = catchAsync(async (req, res) => {
   if (category) {
     queryObj.category = category;
   }
-  
+
   let stacks;
   if (limit) {
-    stacks = await Stack.find(queryObj).sort('-cnt').limit(limit);
+    stacks = await Stack.aggregate([
+      { $match: queryObj },
+      {
+        $project: {
+          _v: 1,
+          name: 1,
+          job_type: 1,
+          job_detail: 1,
+          category: 1,
+          description: 1,
+          logo: 1,
+          cnt: { $cond: { if: { $isArray: '$companies' }, then: { $size: '$companies' }, else: 0 } },
+        },
+      },
+      { $limit: limit },
+      { $sort: { cnt: -1 } },
+    ]);
   } else {
-    stacks = await Stack.find(queryObj).sort('-cnt');
+    stacks = await Stack.aggregate([
+      { $match: queryObj },
+      {
+        $project: {
+          _v: 1,
+          name: 1,
+          job_type: 1,
+          job_detail: 1,
+          category: 1,
+          description: 1,
+          logo: 1,
+          cnt: { $cond: { if: { $isArray: '$companies' }, then: { $size: '$companies' }, else: 0 } },
+        },
+      },
+      { $sort: { cnt: -1 } },
+    ]);
   }
-  
+
   res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: stacks });
 });
 
