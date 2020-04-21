@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 const companySchema = new Schema(
   {
-    name: { type: String, required: true },
+    name: { type: String, required: true, collation: { locale: 'en' } },
     description: { type: String, required: true },
     category: { type: String, required: true },
     link: { type: String, required: true },
@@ -16,8 +16,11 @@ const companySchema = new Schema(
   },
 );
 
-companySchema.virtual('cnt').get(function () {
-  if (this.stacks) return this.stacks.length || 0;
+companySchema.virtual('cnt').get(() => {
+  if (this.stacks) {
+    return this.stacks.length;
+  }
+  return 0;
 });
 
 module.exports = mongoose.model('Company', companySchema);
