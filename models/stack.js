@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 const stackSchema = new Schema(
   {
-    name: { type: String, required: true },
+    name: { type: String, required: true, collation: { locale: 'en' } },
     description: { type: String, required: true },
     logo: String,
     job_type: { type: String, required: true },
@@ -17,8 +17,11 @@ const stackSchema = new Schema(
   },
 );
 
-stackSchema.virtual('cnt').get(function () {
-  if (this.companies) return this.companies.length || 0;
+stackSchema.virtual('cnt').get(() => {
+  if (this.companies) {
+    return this.companies.length;
+  }
+  return 0;
 });
 
 module.exports = mongoose.model('Stack', stackSchema);
