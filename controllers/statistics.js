@@ -3,27 +3,51 @@ const catchAsync = require('utils/catchAsync');
 const AppError = require('utils/appError');
 
 exports.getResult = catchAsync(async (req, res, next) => {
-  const { category, sub_category } = req.query;
+  const { job_detail, category } = req.query;
+  const queryObj = {};
 
-  const result = await Stack.aggregate([
-    { $match: { category, sub_category } },
+  if (job_detail) {
+    queryObj.job_detail = job_detail;
+  }
+  if (category) {
+    queryObj.category = category;
+  }
+
+  const total = await Stack.aggregate([
+    { $match: queryObj },
     { $project: { cnt: { $size: '$companies' } } },
-    { $group: { _id: { category, sub_category }, total: { $sum: '$cnt' } } },
+    { $group: { _id: queryObj, totalCount: { $sum: '$cnt' } } },
   ]);
 
-  let stacks = await Stack.find({ category, sub_category });
-
-  stacks = stacks.map((e) => ({
-    _id: e._id,
-    cnt: e.cnt,
-    total: result[0].total,
-    name: e.name,
-    description: e.description,
-    percentage: (e.cnt / result[0].total) * 100,
-  }));
+  const stacks = await Stack.aggregate([
+    { $match: queryObj },
+    {
+      $project: {
+        _v: 1,
+        name: 1,
+        count: { $cond: { if: { $isArray: '$companies' }, then: { $size: '$companies' }, else: 0 } },
+        total_count: { $sum: total[0].totalCount },
+      },
+    },
+    {
+      $group:
+      {
+        _id: '$_id',
+        name: { $first: '$name' },
+        count: { $sum: '$count' },
+        total_count: { $sum: '$total_count' },
+      },
+    },
+    {
+      $addFields: {
+        percentage: { $round: [{ $multiply: [{ $divide: ['$count', '$total_count'] }, 100] }, 0] },
+      },
+    },
+    { $sort: { percentage: -1 } },
+  ]);
 
   if (stacks) {
-    res.json({ ok: 1, item: stacks });
+    res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: stacks });
   } else {
     next(new AppError(404, 'ITEM_DOESNT_EXIST'));
   }
