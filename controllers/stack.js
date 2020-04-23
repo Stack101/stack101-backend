@@ -33,7 +33,7 @@ exports.getAllStacks = catchAsync(async (req, res) => {
         },
       },
       { $limit: limit },
-      { $sort: { cnt: -1 } },
+      { $sort: { cnt: -1, name: 1 } },
     ]);
   } else {
     stacks = await Stack.aggregate([
@@ -50,7 +50,7 @@ exports.getAllStacks = catchAsync(async (req, res) => {
           cnt: { $cond: { if: { $isArray: '$companies' }, then: { $size: '$companies' }, else: 0 } },
         },
       },
-      { $sort: { cnt: -1 } },
+      { $sort: { cnt: -1, name: 1 } },
     ]);
   }
 
