@@ -2,45 +2,64 @@ const Company = require('models/company');
 const catchAsync = require('utils/catchAsync');
 const AppError = require('utils/appError');
 
-exports.getAllCompanies = catchAsync(async (req, res, next) => {
-  const { stack, category, search } = req.query;
-
-  let companies;
+exports.getAllCompanies = catchAsync(async (req, res) => {
+  const { category, stack, name } = req.query;
+  const { limit } = req.query;
+  const queryObj = {};
+  if (category) {
+    queryObj.category = category;
+  }
   if (stack) {
-    console.log(stack);
-    companies = await Company.find({ stacks: stack }).populate({
-      path: 'stacks',
-      select: 'name description category sub_category',
-    });
-    console.log(companies);
-  } else if (category) {
-    companies = await Company.find({ category }).populate({
-      path: 'stacks',
-      select: 'name description category sub_category',
-    });
-  } else if (search) {
-    companies = await Company.find({ name: search }).populate({
-      path: 'stacks',
-      select: 'name description category sub_category',
-    });
-  } else {
-    return next(new AppError(400, 'SERVICE_NOT_OFFERED'));
+    queryObj.stack = stack;
+  }
+  if (name) {
+    queryObj.name = name;
   }
 
-  res.json({ ok: 1, item: companies });
+  let companies;
+  if (limit) {
+    companies = await Company.aggregate([
+      { $match: queryObj },
+      {
+        $project: {
+          _v: 1,
+          name: 1,
+          description: 1,
+          category: 1,
+          link: 1,
+          logo: 1,
+          cnt: { $cond: { if: { $isArray: '$stacks' }, then: { $size: '$stacks' }, else: 0 } },
+        },
+      },
+      { $limit: limit },
+      { $sort: { name: 1 } },
+    ]);
+  } else {
+    companies = await Company.aggregate([
+      { $match: queryObj },
+      {
+        $project: {
+          _v: 1,
+          name: 1,
+          description: 1,
+          category: 1,
+          link: 1,
+          logo: 1,
+          cnt: { $cond: { if: { $isArray: '$stacks' }, then: { $size: '$stacks' }, else: 0 } },
+        },
+      },
+      { $sort: { name: 1 } },
+    ]);
+  }
+
+  res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: companies });
 });
 
 exports.getCompany = catchAsync(async (req, res, next) => {
-  const { id } = req.params;
-
-  const company = await Company.findOne({ _id: id }).populate({
-    path: 'stacks',
-    select: 'name description category sub_category',
-  });
-
+  const company = await Company.findById(req.params.id).populate('stacks', { companies: 0 });
   if (company) {
-    res.json({ ok: 1, item: company });
+    res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: company });
   } else {
-    return next(new AppError(404, 'ITEM_DOESNT_EXIST'));
+    next(new AppError(404, 'ITEM_DOESNT_EXIST'));
   }
 });
