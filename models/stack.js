@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 
 const stackSchema = new Schema(
   {
+    id: mongoose.Schema.Types.ObjectId,
     name: { type: String, required: true, collation: { locale: 'en' } },
     description: { type: String, required: true },
     logo: String,
@@ -12,16 +13,10 @@ const stackSchema = new Schema(
     category: { type: String, required: true },
     companies: [{ type: Schema.Types.ObjectId, ref: 'Company' }],
   },
-  {
-    toJSON: { virtuals: true },
-  },
 );
 
-stackSchema.virtual('cnt').get(() => {
-  if (this.companies) {
-    return this.companies.length;
-  }
-  return 0;
+stackSchema.virtual('cnt').get(function getCnt() {
+  return (this.companies && this.companies.length) || 0;
 });
 
 module.exports = mongoose.model('Stack', stackSchema);
