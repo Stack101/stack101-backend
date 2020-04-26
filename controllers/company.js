@@ -4,14 +4,12 @@ const catchAsync = require('utils/catchAsync');
 const AppError = require('utils/appError');
 
 exports.getAllCompanies = catchAsync(async (req, res) => {
-  const { category, stack, name } = req.query;
+  const { category, name } = req.query;
   const { limit } = req.query;
   const queryObj = {};
+
   if (category) {
     queryObj.category = category;
-  }
-  if (stack) {
-    queryObj.stack = stack;
   }
   if (name) {
     queryObj.name = name;
@@ -29,6 +27,7 @@ exports.getAllCompanies = catchAsync(async (req, res) => {
           category: 1,
           link: 1,
           logo: 1,
+          stacks: 1,
           cnt: { $cond: { if: { $isArray: '$stacks' }, then: { $size: '$stacks' }, else: 0 } },
         },
       },
