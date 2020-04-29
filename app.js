@@ -7,12 +7,13 @@ const morgan = require('morgan');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const router = require('routes');
+const winston = require('./config/winston');
 
 dotenv.config();
 
 app.use(cors());
-app.use(morgan('dev'));
 app.use(bodyParser.json());
+app.use(morgan('dev', { stream: winston.stream }));
 router(app);
 
 mongoose
@@ -23,10 +24,10 @@ mongoose
     useCreateIndex: true,
   })
   .then(() => {
-    console.log('db connected to ' + process.env.MONGO_URI);
+    winston.info(`db connected to ${process.env.MONGO_URI}`);
   })
   .catch((err) => {
-    console.log('db connection error ' + err.message);
+    winston.info(`db connection error ${err.message}`);
   });
 
 mongoose.Promise = global.Promise;
