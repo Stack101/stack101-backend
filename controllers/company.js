@@ -3,7 +3,7 @@ const Company = require('models/company');
 const catchAsync = require('utils/catchAsync');
 const AppError = require('utils/appError');
 
-exports.getAllCompanies = catchAsync(async (req, res) => {
+exports.getAllCompanies = catchAsync(async (req, res, next) => {
   const { category, name } = req.query;
   const { limit } = req.query;
   const queryObj = {};
@@ -51,8 +51,11 @@ exports.getAllCompanies = catchAsync(async (req, res) => {
       { $sort: { name: 1 } },
     ]);
   }
-
-  res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: companies });
+  if (companies.length !== 0) {
+    res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: companies });
+  } else {
+    next(new AppError(404, 'ITEM_DOESNT_EXIST'));
+  }
 });
 
 exports.getCompany = catchAsync(async (req, res, next) => {
@@ -97,7 +100,7 @@ exports.getCompany = catchAsync(async (req, res, next) => {
       },
     },
   ]);
-  if (company) {
+  if (company.length !== 0) {
     res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: company });
   } else {
     next(new AppError(404, 'ITEM_DOESNT_EXIST'));

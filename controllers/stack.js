@@ -3,7 +3,7 @@ const Stack = require('models/stack');
 const catchAsync = require('utils/catchAsync');
 const AppError = require('utils/appError');
 
-exports.getAllStacks = catchAsync(async (req, res) => {
+exports.getAllStacks = catchAsync(async (req, res, next) => {
   const { job_type, job_detail, category } = req.query;
   const { limit } = req.query;
   const queryObj = {};
@@ -54,8 +54,11 @@ exports.getAllStacks = catchAsync(async (req, res) => {
       { $sort: { cnt: -1, name: 1 } },
     ]);
   }
-
-  res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: stacks });
+  if (stacks.length !== 0) {
+    res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: stacks });
+  } else {
+    next(new AppError(404, 'ITEM_DOESNT_EXIST'));
+  }
 });
 
 exports.getStack = catchAsync(async (req, res, next) => {
@@ -101,7 +104,7 @@ exports.getStack = catchAsync(async (req, res, next) => {
       },
     },
   ]);
-  if (stack) {
+  if (stack.length !== 0) {
     res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: stack });
   } else {
     next(new AppError(404, 'ITEM_DOESNT_EXIST'));

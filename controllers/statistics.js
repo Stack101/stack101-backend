@@ -18,36 +18,38 @@ exports.getResult = catchAsync(async (req, res, next) => {
     { $project: { cnt: { $size: '$companies' } } },
     { $group: { _id: queryObj, totalCount: { $sum: '$cnt' } } },
   ]);
-
-  const stacks = await Stack.aggregate([
-    { $match: queryObj },
-    {
-      $project: {
-        _v: 1,
-        name: 1,
-        count: { $cond: { if: { $isArray: '$companies' }, then: { $size: '$companies' }, else: 0 } },
-        total_count: { $sum: total[0].totalCount },
-      },
-    },
-    {
-      $group:
+  if (total.length !== 0) {
+    const stacks = await Stack.aggregate([
+      { $match: queryObj },
       {
-        _id: '$_id',
-        name: { $first: '$name' },
-        count: { $sum: '$count' },
-        total_count: { $sum: '$total_count' },
+        $project: {
+          _v: 1,
+          name: 1,
+          count: { $cond: { if: { $isArray: '$companies' }, then: { $size: '$companies' }, else: 0 } },
+          total_count: { $sum: total[0].totalCount },
+        },
       },
-    },
-    {
-      $addFields: {
-        percentage: { $round: [{ $multiply: [{ $divide: ['$count', '$total_count'] }, 100] }, 0] },
+      {
+        $group:
+        {
+          _id: '$_id',
+          name: { $first: '$name' },
+          count: { $sum: '$count' },
+          total_count: { $sum: '$total_count' },
+        },
       },
-    },
-    { $sort: { percentage: -1 } },
-  ]);
-
-  if (stacks) {
-    res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: stacks });
+      {
+        $addFields: {
+          percentage: { $round: [{ $multiply: [{ $divide: ['$count', '$total_count'] }, 100] }, 0] },
+        },
+      },
+      { $sort: { percentage: -1 } },
+    ]);
+    if (stacks) {
+      res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: stacks });
+    } else {
+      next(new AppError(404, 'ITEM_DOESNT_EXIST'));
+    }
   } else {
     next(new AppError(404, 'ITEM_DOESNT_EXIST'));
   }
