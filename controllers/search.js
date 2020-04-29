@@ -6,21 +6,107 @@ const AppError = require('utils/appError');
 exports.getResult = catchAsync(async (req, res, next) => {
   const { keyword } = req.params;
   let searchResult;
-  // 1. keyword와 일치하는 이름을 가진 데이터 존재 확인 (대소문자 구분없이 검색되도록 정규표현식 활용)
-  // 2. 참조 ObjectId를 실제 객체로 반환할 때, 그 객체의 참조 Id까지는 반환할 필요 없으므로 제외해서 조회
-  const company = await Company.findOne({ name: { $regex: keyword, $options: 'ix' } });
-  const stack = await Stack.findOne({ name: { $regex: keyword, $options: 'ix' } });
 
-  if (company && !stack) {
-    searchResult = await Company.aggregate([
-      { $match: { name: { $regex: keyword, $options: 'ix' } } },
+  const exactMatchKeyword = `^${keyword}$`;
+  const startMatchKeyword = `^${keyword}`;
+
+  const company = await Company.findOne({ name: { $regex: exactMatchKeyword, $options: 'ix' } });
+  const stack = await Stack.findOne({ name: { $regex: exactMatchKeyword, $options: 'ix' } });
+
+  if (company && stack) {
+  // 정확한 회사명과 스택명이 모두 존재 할 때
+
+    const exactCompany = await Company.aggregate([
+      {
+        $match: {
+          name: { $regex: exactMatchKeyword, $options: 'ix' },
+        },
+      },
       {
         $project: {
           _id: 1,
           name: 1,
           logo: 1,
+          repStack: { $arrayElemAt: ['$stacks', 0] },
+          cnt: { $size: '$stacks' },
+        },
+      },
+      {
+        $lookup: {
+          from: 'stacks',
+          localField: 'repStack',
+          foreignField: '_id',
+          as: 'repStack',
+        },
+      },
+      {
+        $addFields: {
+          repStack: { $arrayElemAt: ['$repStack.name', 0] },
+        },
+      },
+      {
+        $sort: { name: 1, cnt: -1 },
+      },
+    ]);
+    const exactStack = await Stack.aggregate([
+      {
+        $match: {
+          name: { $regex: exactMatchKeyword, $options: 'ix' },
+        },
+      },
+      {
+        $project: {
+          _id: 1,
+          name: 1,
+          logo: 1,
+          repCompany: { $arrayElemAt: ['$companies', 0] },
+          cnt: { $size: '$companies' },
+        },
+      },
+      {
+        $lookup: {
+          from: 'companies',
+          localField: 'repCompany',
+          foreignField: '_id',
+          as: 'repCompany',
+        },
+      },
+      {
+        $addFields: {
+          repCompany: { $arrayElemAt: ['$repCompany.name', 0] },
+        },
+      },
+      {
+        $sort: { name: 1, cnt: -1 },
+      },
+    ]);
+    searchResult = { _id: keyword, stackResult: exactStack, companyResult: exactCompany };
+  } else if (company && !stack) {
+  // 정확한 회사명만 존재 할 때
+
+    searchResult = await Company.aggregate([
+      { $match: { name: { $regex: exactMatchKeyword, $options: 'ix' } } },
+      {
+        $project: {
+          _id: 1,
+          name: 1,
+          logo: 1,
+          repStack: { $arrayElemAt: ['$stacks', 0] },
           stacks: 1,
           cnt: { $size: '$stacks' },
+        },
+      },
+      {
+        $lookup: {
+          from: 'stacks',
+          localField: 'repStack',
+          foreignField: '_id',
+          as: 'repStack',
+        },
+      },
+      {
+        $addFields: {
+          repStack: { $arrayElemAt: ['$repStack.name', 0] },
         },
       },
       {
@@ -40,6 +126,7 @@ exports.getResult = catchAsync(async (req, res, next) => {
                 _id: '$$this._id',
                 name: '$$this.name',
                 logo: '$$this.logo',
+                repCompany: { $arrayElemAt: ['$$this.companies', 0] },
                 cnt: { $size: '$$this.companies' },
               },
             },
@@ -53,12 +140,27 @@ exports.getResult = catchAsync(async (req, res, next) => {
           stackResult: { $addToSet: '$stacks' },
           companyResult: {
             $addToSet: {
-              _id: '$_id', name: '$name', logo: '$logo', cnt: '$cnt',
+              _id: '$_id', name: '$name', logo: '$logo', repStack: '$repStack', cnt: '$cnt',
             },
           },
         },
       },
       { $unwind: '$stackResult' },
+      {
+        $lookup: {
+          from: 'companies',
+          localField: 'stackResult.repCompany',
+          foreignField: '_id',
+          as: 'stackResult.repCompany',
+        },
+      },
+      {
+        $addFields: {
+          stackResult: {
+            repCompany: { $arrayElemAt: ['$stackResult.repCompany.name', 0] },
+          },
+        },
+      },
       { $sort: { 'stackResult.name': 1, 'companyResult.name': 1 } },
       {
         $group:
@@ -72,15 +174,31 @@ exports.getResult = catchAsync(async (req, res, next) => {
       },
     ]);
   } else if (stack && !company) {
+  // 정확한 스택명만 존재할 때
+
     searchResult = await Stack.aggregate([
-      { $match: { name: { $regex: keyword, $options: 'ix' } } },
+      { $match: { name: { $regex: exactMatchKeyword, $options: 'ix' } } },
       {
         $project: {
           _id: 1,
           name: 1,
           companies: 1,
           logo: 1,
+          repCompany: { $arrayElemAt: ['$companies', 0] },
           cnt: { $size: '$companies' },
+        },
+      },
+      {
+        $lookup: {
+          from: 'companies',
+          localField: 'repCompany',
+          foreignField: '_id',
+          as: 'repCompany',
+        },
+      },
+      {
+        $addFields: {
+          repCompany: { $arrayElemAt: ['$repCompany.name', 0] },
         },
       },
       {
@@ -100,6 +218,7 @@ exports.getResult = catchAsync(async (req, res, next) => {
                 _id: '$$this._id',
                 name: '$$this.name',
                 logo: '$$this.logo',
+                repStack: { $arrayElemAt: ['$$this.stacks', 0] },
                 cnt: { $size: '$$this.stacks' },
               },
             },
@@ -119,6 +238,21 @@ exports.getResult = catchAsync(async (req, res, next) => {
         },
       },
       { $unwind: '$companyResult' },
+      {
+        $lookup: {
+          from: 'stacks',
+          localField: 'companyResult.repStack',
+          foreignField: '_id',
+          as: 'companyResult.repStack',
+        },
+      },
+      {
+        $addFields: {
+          companyResult: {
+            repStack: { $arrayElemAt: ['$companyResult.repStack.name', 0] },
+          },
+        },
+      },
       { $sort: { 'companyResult.name': 1, 'stackResult.name': 1 } },
       {
         $group:
@@ -132,9 +266,89 @@ exports.getResult = catchAsync(async (req, res, next) => {
       },
     ]);
   }
+
+  // 검색 키워드와 정확하게 일치하는 데이터가 없을 때
   if (!company && !stack) {
-    next(new AppError(404, 'ITEM_DOESNT_EXIST'));
+    // 검색 키워드와 부분적으로 일치하는 데이터 탐색
+
+    const companyResult = await Company.aggregate([
+      {
+        $match: {
+          name: { $regex: startMatchKeyword, $options: 'i' },
+        },
+      },
+      {
+        $project: {
+          _id: 1,
+          name: 1,
+          logo: 1,
+          repStack: { $arrayElemAt: ['$stacks', 0] },
+          cnt: { $size: '$stacks' },
+        },
+      },
+      {
+        $lookup: {
+          from: 'stacks',
+          localField: 'repStack',
+          foreignField: '_id',
+          as: 'repStack',
+        },
+      },
+      {
+        $addFields: {
+          repStack: { $arrayElemAt: ['$repStack.name', 0] },
+        },
+      },
+      {
+        $sort: { name: 1, cnt: -1 },
+      },
+    ]);
+    const stackResult = await Stack.aggregate([
+      {
+        $match: {
+          name: { $regex: startMatchKeyword, $options: 'i' },
+        },
+      },
+      {
+        $project: {
+          _id: 1,
+          name: 1,
+          logo: 1,
+          repCompany: { $arrayElemAt: ['$companies', 0] },
+          cnt: { $size: '$companies' },
+        },
+      },
+      {
+        $lookup: {
+          from: 'companies',
+          localField: 'repCompany',
+          foreignField: '_id',
+          as: 'repCompany',
+        },
+      },
+      {
+        $addFields: {
+          repCompany: { $arrayElemAt: ['$repCompany.name', 0] },
+        },
+      },
+      {
+        $sort: { name: 1, cnt: -1 },
+      },
+    ]);
+
+    searchResult = { _id: keyword, stackResult, companyResult };
+
+    // 검색한 키워드가 존재하지 않는 경우
+    if (companyResult.length === 0 && stackResult.length === 0) {
+      next(new AppError(404, 'ITEM_DOESNT_EXIST'));
+    } else {
+    // 검색 키워드와 부분적으로 일치하는 데이터 반환
+
+      res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: searchResult });
+    }
   } else {
+  // 검색 키워드와 정확하게 일치하는 데이터 반환
+
     res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: searchResult });
   }
 });
