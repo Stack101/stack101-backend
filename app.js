@@ -13,7 +13,7 @@ dotenv.config();
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(morgan('dev', { stream: winston.stream.write }));
+app.use(morgan('dev', { stream: winston.stream }));
 router(app);
 
 mongoose
