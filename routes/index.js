@@ -14,7 +14,7 @@ const router = (app) => {
 
   app.all('*', (req, res, next) => {
     const err = {
-      msg: `server doesn't have a service for ${req.originalUrl}`,
+      message: `server doesn't have a service for ${req.originalUrl}`,
       status: 'fail',
       statusCode: 404,
     };
@@ -33,8 +33,8 @@ const router = (app) => {
 
     res.status(error.statusCode).json({
       ok: 0,
-      status: error.status,
-      msg: error.message,
+      message: error.message,
+      item: [],
     });
   });
 };
