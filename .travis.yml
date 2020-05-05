@@ -6,6 +6,12 @@ before_install:
 branches:
   only:
     - master
+
+before_deploy:
+  - zip -r stack101-backend *
+  - mkdir -p deploy
+  - mv stack101-backend.zip deploy/stack101-backend.zip
+
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY
@@ -13,7 +19,8 @@ deploy:
     bucket: stack101
     region: ap-northeast-2
     skip_cleanup: true
-    acl: public_read
+    acl: private
+    local_dir: deploy
     wait-until-deployed: true
     on:
       repo: Stack101/stack101-backend #Github 주소
