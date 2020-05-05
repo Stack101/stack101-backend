@@ -6,6 +6,33 @@ before_install:
 branches:
   only:
     - master
+deploy:
+  - provider: s3
+    access_key_id: ${AWS_ACCESS_KEY}
+    secret_access_key: ${AWS_SECRET_KEY}
+    bucket: stack101
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: public_read
+    wait-until-deployed: true
+    on:
+      repo: Stack101/stack101-backend #Github 주소
+      branch: master
+
+  - provider: codedeploy
+    access_key_id: ${AWS_ACCESS_KEY}
+    secret_access_key: ${AWS_SECRET_KEY}
+    bucket: stack101
+    key: stack101-backend.zip
+    bundle_type: zip
+    application: stack101-backend
+    deployment_group: stack101-backend-deploy-group
+    region: ap-northeast-2
+    wait-until-deployed: true
+    on:
+      repo: Stack101/stack101-backend
+      branch: master
+
 notifications:
   email:
     recipients:
