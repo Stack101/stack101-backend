@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "13.11"
+before_install:
+  - npm install -g yarn
+branches:
+  only:
+    - master
+notifications:
+  email:
+    recipients:
+      - shrmffkfk@naver.com
