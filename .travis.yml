@@ -19,7 +19,6 @@ deploy:
     bucket: stack101
     region: ap-northeast-2
     skip_cleanup: true
-    acl: private
     local_dir: deploy
     wait-until-deployed: true
     on:
