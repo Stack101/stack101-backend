@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const router = require('routes');
+const router = require('./routes');
 const winston = require('./config/winston');
 
 dotenv.config();

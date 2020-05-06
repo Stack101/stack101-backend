@@ -1,6 +1,6 @@
-const Stack = require('models/stack');
-const catchAsync = require('utils/catchAsync');
-const AppError = require('utils/appError');
+const Stack = require('../models/stack');
+const catchAsync = require('../utils/catchAsync');
+const AppError = require('../utils/appError');
 
 exports.getResult = catchAsync(async (req, res, next) => {
   const { job_detail, category } = req.query;

@@ -1,4 +1,4 @@
-const MAIN_DB = require('db/main');
+const MAIN_DB = require('../db/main');
 
 exports.testGet = async (req, res) => {
   console.log('test route......');

@@ -1,7 +1,7 @@
-const Company = require('models/company');
-const Stack = require('models/stack');
-const catchAsync = require('utils/catchAsync');
-const AppError = require('utils/appError');
+const Company = require('../models/company');
+const Stack = require('../models/stack');
+const catchAsync = require('../utils/catchAsync');
+const AppError = require('../utils/appError');
 
 exports.getResult = catchAsync(async (req, res, next) => {
   const { keyword } = req.params;
