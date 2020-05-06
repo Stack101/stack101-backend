@@ -1,4 +1,4 @@
-const AppError = require('utils/appError');
+const AppError = require('../utils/appError');
 const testRouter = require('./test');
 const stackRouter = require('./stack');
 const companyRouter = require('./company');

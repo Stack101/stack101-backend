@@ -1,7 +1,7 @@
 const Mongoose = require('mongoose');
-const Stack = require('models/stack');
-const catchAsync = require('utils/catchAsync');
-const AppError = require('utils/appError');
+const Stack = require('../models/stack');
+const catchAsync = require('../utils/catchAsync');
+const AppError = require('../utils/appError');
 
 exports.getAllStacks = catchAsync(async (req, res, next) => {
   const { job_type, job_detail, category } = req.query;

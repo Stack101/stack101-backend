@@ -1,7 +1,7 @@
 const Mongoose = require('mongoose');
-const Company = require('models/company');
-const catchAsync = require('utils/catchAsync');
-const AppError = require('utils/appError');
+const Company = require('../models/company');
+const catchAsync = require('../utils/catchAsync');
+const AppError = require('../utils/appError');
 
 exports.getAllCompanies = catchAsync(async (req, res, next) => {
   const { category, name } = req.query;
