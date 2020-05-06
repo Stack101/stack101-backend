@@ -5,6 +5,12 @@ files:
     destination: /home/ec2-user/app/stack101-backend/zip/
     overwrite: yes
 
+permissions:
+     - object: /
+       pattern: "**"
+       owner: ec2-user
+       group: ec2-user
+       
 hooks:
   AfterInstall:
     - location: deploy.sh
