@@ -9,7 +9,7 @@ const router = (app) => {
   app.use('/test', testRouter);
   app.use('/stack', stackRouter);
   app.use('/company', companyRouter);
-  app.use('/statistics', statisticsRouter);
+  app.use('/statistic', statisticsRouter);
   app.use('/search', searchRouter);
 
   app.all('*', (req, res, next) => {
