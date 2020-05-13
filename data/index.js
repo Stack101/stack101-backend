@@ -21,7 +21,7 @@ const updateRefId = async (element) => {
   if (element.Frontend_Framework) {
     element.Frontend_Language.split(',').forEach(async (v) => {
       // 해당 스택의 id 조회
-      const result = await Stack.findOne({ name: v, job_detail: 'Frontend' }, '_id');
+      const result = await Stack.findOne({ name: v, job_detail: 'frontend' }, '_id');
 
       // 회사 정보에 스택 ObjectId정보 push
       const updatedResult = await Company.findOneAndUpdate(
@@ -40,7 +40,7 @@ const updateRefId = async (element) => {
   // 프론트엔드 프레임워크 스택
   if (element.Frontend_Framework) {
     element.Frontend_Framework.split(',').forEach(async (v) => {
-      const result = await Stack.findOne({ name: v, job_detail: 'Frontend' }, '_id');
+      const result = await Stack.findOne({ name: v, job_detail: 'frontend' }, '_id');
       if (result !== null) {
         const updatedResult = await Company.findOneAndUpdate(
           { name: element.Name },
@@ -57,7 +57,7 @@ const updateRefId = async (element) => {
   // 백엔드 언어 스택
   if (element.Backend_Language) {
     element.Backend_Language.split(',').forEach(async (v) => {
-      const result = await Stack.findOne({ name: v, job_detail: 'Backend' }, '_id');
+      const result = await Stack.findOne({ name: v, job_detail: 'backend' }, '_id');
       const updatedResult = await Company.findOneAndUpdate(
         { name: element.Name },
         { $push: { stacks: result._id } },
@@ -72,7 +72,7 @@ const updateRefId = async (element) => {
   // 백엔드 프레임워크 스택
   if (element.Backend_Framework) {
     element.Backend_Framework.split(',').forEach(async (v) => {
-      const result = await Stack.findOne({ name: v, job_detail: 'Backend' }, '_id');
+      const result = await Stack.findOne({ name: v, job_detail: 'backend' }, '_id');
       const updatedResult = await Company.findOneAndUpdate(
         { name: element.Name },
         { $push: { stacks: result._id } },
@@ -84,10 +84,10 @@ const updateRefId = async (element) => {
     });
   }
 
-  // 안드로이드 스택
+  // App 스택
   if (element.App) {
     element.App.split(',').forEach(async (v) => {
-      const result = await Stack.findOne({ name: v, job_detail: 'App' }, '_id');
+      const result = await Stack.findOne({ name: v, job_detail: 'app' }, '_id');
       const updatedResult = await Company.findOneAndUpdate(
         { name: element.Name },
         { $push: { stacks: result._id } },
@@ -102,7 +102,7 @@ const updateRefId = async (element) => {
   // 프로토타이핑 디자인 툴 스택
   if (element.Prototyping) {
     element.Prototyping.split(',').forEach(async (v) => {
-      const result = await Stack.findOne({ name: v, category: 'Prototyping' }, '_id');
+      const result = await Stack.findOne({ name: v, category: 'prototyping' }, '_id');
       const updatedResult = await Company.findOneAndUpdate(
         { name: element.Name },
         { $push: { stacks: result._id } },
@@ -117,22 +117,7 @@ const updateRefId = async (element) => {
   // Management 디자인 툴 스택
   if (element.Management) {
     element.Management.split(',').forEach(async (v) => {
-      const result = await Stack.findOne({ name: v, category: 'Management' }, '_id');
-      const updatedResult = await Company.findOneAndUpdate(
-        { name: element.Name },
-        { $push: { stacks: result._id } },
-      );
-      await Stack.findOneAndUpdate(
-        { _id: result._id },
-        { $push: { companies: updatedResult._id } },
-      );
-    });
-  }
-
-  // Experience 툴 스택
-  if (element.Experience) {
-    element.Experience.split(',').forEach(async (v) => {
-      const result = await Stack.findOne({ name: v, category: 'Experience' }, '_id');
+      const result = await Stack.findOne({ name: v, category: 'management' }, '_id');
       const updatedResult = await Company.findOneAndUpdate(
         { name: element.Name },
         { $push: { stacks: result._id } },
@@ -170,6 +155,10 @@ const insertCompanies = async () => {
   }).then(() => {
     console.log('DB connection success');
   });
+
+  await Stack.deleteMany({});
+  await Company.deleteMany({});
+
   // Stack.companies를 제외하고 스택정보 추가
   await insertStacks();
 

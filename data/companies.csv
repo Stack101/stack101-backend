@@ -1,5 +1,5 @@
-﻿Column,Name,Description,Logo,Link,Frontend_Language,Frontend_Framework,Backend_Language,Backend_Framework,App,Prototyping,Management,Experience
-HomeService,오늘의집,설명,logo image link,https://www.wanted.co.kr/company/179,"Javascript,Typescript","React,jQuery",Ruby,Rails,"Kotlin,Swift",Sketch,,
-HomeService,miso,설명,logo image link,https://www.wanted.co.kr/company/459,Javascript,React,"Go,Python,Ruby,Javascript",Node.js,"Kotlin,React-Native,Objective-C","Adobe,Overflow,Sketch","InVision,Zeplin",
-Education,Riiid!,설명,logo image link,https://www.wanted.co.kr/company/341,Javascript,,"C#,Kotlin",".net,Spring Boot","Kotlin,Swift","Figma,Sketch",,
-Education,ST Unitas,설명,logo image link,https://www.wanted.co.kr/company/717,Javascript,"React,Vue.js","Java,PHP,Python,Ruby","Rails,Spring","Kotlin,Swift",Adobe,,
+﻿Column,Name,Description,Logo,Link,Frontend_Language,Frontend_Framework,Backend_Language,Backend_Framework,App,Prototyping,Management
+HomeService,오늘의집,설명,logo image link,https://www.wanted.co.kr/company/179,"Javascript,Typescript","React,jQuery",Ruby,Rails,"Kotlin,Swift",Sketch,
+HomeService,miso,설명,logo image link,https://www.wanted.co.kr/company/459,Javascript,React,"Go,Python,Ruby,Javascript",Node.js,"Kotlin,React-Native,Objective-C","Adobe,Overflow,Sketch","InVision,Zeplin"
+Education,Riiid!,설명,logo image link,https://www.wanted.co.kr/company/341,Javascript,,"C#,Kotlin",".net,Spring Boot","Kotlin,Swift","Figma,Sketch",
+Education,ST Unitas,설명,logo image link,https://www.wanted.co.kr/company/717,Javascript,"React,Vue.js","Java,PHP,Python,Ruby","Rails,Spring","Kotlin,Swift",Adobe,
