@@ -335,20 +335,17 @@ exports.getResult = catchAsync(async (req, res, next) => {
         $sort: { name: 1, cnt: -1 },
       },
     ]);
-
-    searchResult = { _id: keyword, stackResult, companyResult };
+    searchResult = [{ _id: keyword, stackResult, companyResult }];
 
     // 검색한 키워드가 존재하지 않는 경우
     if (companyResult.length === 0 && stackResult.length === 0) {
       next(new AppError(404, 'ITEM_DOESNT_EXIST'));
     } else {
     // 검색 키워드와 부분적으로 일치하는 데이터 반환
-
       res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: searchResult });
     }
   } else {
   // 검색 키워드와 정확하게 일치하는 데이터 반환
-
     res.json({ ok: 1, msg: 'Http Result Code 200 OK', item: searchResult });
   }
 });
