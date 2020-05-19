@@ -18,11 +18,10 @@ const insertStacks = async () => {
 // 참조 ObjectId 추가
 const updateRefId = async (element) => {
   // 프론트엔드 언어 스택
-  if (element.Frontend_Framework) {
+  if (element.Frontend_Language) {
     element.Frontend_Language.split(',').forEach(async (v) => {
       // 해당 스택의 id 조회
       const result = await Stack.findOne({ name: v, job_detail: 'frontend' }, '_id');
-
       // 회사 정보에 스택 ObjectId정보 push
       const updatedResult = await Company.findOneAndUpdate(
         { name: element.Name },
@@ -161,8 +160,9 @@ const insertCompanies = async () => {
 
   // Stack.companies를 제외하고 스택정보 추가
   await insertStacks();
-
   /* Company.stacks를 제외하고 회사정보 추가,
   참조관계에 맞는 ObjectId값을 companies, stacks에 추가 */
-  await insertCompanies();
+  await insertCompanies().then(() => {
+    process.exit(0);
+  });
 })();
