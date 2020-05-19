@@ -6,10 +6,10 @@ const companySchema = new Schema(
   {
     id: mongoose.Schema.Types.ObjectId,
     name: { type: String, required: true, collation: { locale: 'en' } },
-    description: { type: String, required: true },
+    description: String,
     category: { type: String, required: true },
     link: { type: String, required: true },
-    logo: { type: String, required: true },
+    logo: String,
     stacks: [{ type: Schema.Types.ObjectId, ref: 'Stack' }],
   },
 );
