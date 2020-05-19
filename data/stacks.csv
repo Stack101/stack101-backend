@@ -1,29 +1,40 @@
 ﻿name,description,logo,job_type,job_detail,category
-Javascript,javascript는 어쩌고,image link,developer,frontend,language
-Javascript,javascript는 어쩌고,image link,developer,backend,language
-Typescript,Typescript는~,image link,developer,frontend,language
-React,React는~,image link,developer,frontend,framework
-Vue.js,Vue.js는~,image link,developer,frontend,framework
-jQuery,jQuery는~,image link,developer,frontend,framework
-Node.js,Node.js는~,image link,developer,backend,framework
-Ruby,Ruby는~,image link,developer,backend,language
-Go,Go는~,image link,developer,backend,language
-Python,Python은~,image link,developer,backend,language
-C#,C#은~,image link,developer,backend,language
-Kotlin,Kotlin은~,image link,developer,backend,language
-Kotlin,Kotlin은~,image link,developer,app,language
-Java,Java는~,image link,developer,backend,language
-PHP,PHP는~,image link,developer,backend,language
-Rails,Rails는~,image link,developer,backend,framework
-.net,.net은~,image link,developer,backend,framework
-Spring Boot,Spring Boot는~,image link,developer,backend,framework
-Spring,Spring은~,image link,developer,backend,framework
-React-Native,React Native는~,image link,developer,app,framework
-Swift,Swift는~,image link,developer,app,language
-Objective-C,Objective-C는~,image link,developer,app,language
-Sketch,Sketch는~,image link,designer,uiux,prototyping
-Zeplin,Zeplin은~,image link,designer,uiux,management
-Figma,Figma는~,image link,designer,uiux,prototyping
-Adobe,Adobe는~,image link,designer,uiux,prototyping
-InVision,InVIsion은~,image link,designer,uiux,management
-Overflow,Overflow는~,image link,designer,uiux,prototyping
+Javascript,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_javascript_512x512.png,developer,frontend,language
+Typescript,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_typescript_512x512.png,developer,frontend,language
+Vue,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_vuejs_512x512.png,developer,frontend,framework
+React,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_react_512x512.png,developer,frontend,framework
+Angular,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_angular_512x512.png,developer,frontend,framework
+Polymer,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_polymer_512x512.png,developer,frontend,framework
+Ember,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_ember.js_512x512.png,developer,frontend,framework
+jQuery,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_jquery_512x512.png,developer,frontend,framework
+Kotlin,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_kotlin_512x512.png,developer,backend,language
+Java,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_java_512x512.png,developer,backend,language
+Javascript,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_javascript_512x512.png,developer,backend,language
+Python,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_python_512x512.png,developer,backend,language
+PHP,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_php_512x512.png,developer,backend,language
+Ruby,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_ruby_512x512.png,developer,backend,language
+C#,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_c%23_512x512.png,developer,backend,language
+Go,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_go_512x512.png,developer,backend,language
+Typescript,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_typescript_512x512.png,developer,backend,language
+Rust,-,#,developer,backend,language
+Flask,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_flask_512x512.png,developer,backend,framework
+Spring,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_spring_512x512.png,developer,backend,framework
+Node.js,-,#,developer,backend,framework
+.net,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_net_512x512.png,developer,backend,framework
+Spring-Boot,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_springboot_512x512.png,developer,backend,framework
+Django,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_django_512x512.png,developer,backend,framework
+Laravel,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_laravel_512x512.png,developer,backend,framework
+Rails,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_rubyonrails_512x512.png,developer,backend,framework
+React Native,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_reactnative_512x512.png,developer,app,language
+Flutter,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_flutter_512x512.png,developer,app,language
+Swift,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_swift_512x512.png,developer,app,language
+Objective-C,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_objectivec_512x512.png,developer,app,language
+Kotlin,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_kotlin_512x512.png,developer,app,language
+Java,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_java_512x512.png,developer,app,language
+Sketch,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_sketch_512x512.png,designer,uiux,prototyping
+Overflow,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_overflow_512x512.png,designer,uiux,prototyping
+Adobe,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_adobe_512x512.png,designer,uiux,prototyping
+Protopie,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_protopie_512x512.png,designer,uiux,prototyping
+Figma,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_figma_512x512.png,designer,uiux,prototyping
+Zeplin,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_zeplin_512x512.png,designer,uiux,management
+InVision,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_invision_512x512.png,designer,uiux,management
