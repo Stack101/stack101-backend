@@ -1,40 +1,40 @@
 ﻿name,description,logo,job_type,job_detail,category
-Javascript,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_javascript_512x512.png,developer,frontend,language
-Typescript,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_typescript_512x512.png,developer,frontend,language
-Vue,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_vuejs_512x512.png,developer,frontend,framework
-React,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_react_512x512.png,developer,frontend,framework
-Angular,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_angular_512x512.png,developer,frontend,framework
-Polymer,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_polymer_512x512.png,developer,frontend,framework
-Ember,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_ember.js_512x512.png,developer,frontend,framework
-jQuery,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_jquery_512x512.png,developer,frontend,framework
-Kotlin,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_kotlin_512x512.png,developer,backend,language
-Java,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_java_512x512.png,developer,backend,language
-Javascript,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_javascript_512x512.png,developer,backend,language
-Python,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_python_512x512.png,developer,backend,language
-PHP,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_php_512x512.png,developer,backend,language
-Ruby,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_ruby_512x512.png,developer,backend,language
-C#,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_c%23_512x512.png,developer,backend,language
-Go,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_go_512x512.png,developer,backend,language
-Typescript,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_typescript_512x512.png,developer,backend,language
-Rust,-,#,developer,backend,language
-Flask,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_flask_512x512.png,developer,backend,framework
-Spring,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_spring_512x512.png,developer,backend,framework
-Node.js,-,#,developer,backend,framework
-.net,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_net_512x512.png,developer,backend,framework
-Spring-Boot,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_springboot_512x512.png,developer,backend,framework
-Django,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_django_512x512.png,developer,backend,framework
-Laravel,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_laravel_512x512.png,developer,backend,framework
-Rails,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_rubyonrails_512x512.png,developer,backend,framework
-React Native,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_reactnative_512x512.png,developer,app,language
-Flutter,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_flutter_512x512.png,developer,app,language
-Swift,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_swift_512x512.png,developer,app,language
-Objective-C,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_objectivec_512x512.png,developer,app,language
-Kotlin,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_kotlin_512x512.png,developer,app,language
-Java,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_java_512x512.png,developer,app,language
-Sketch,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_sketch_512x512.png,designer,uiux,prototyping
-Overflow,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_overflow_512x512.png,designer,uiux,prototyping
-Adobe,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_adobe_512x512.png,designer,uiux,prototyping
-Protopie,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_protopie_512x512.png,designer,uiux,prototyping
-Figma,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_figma_512x512.png,designer,uiux,prototyping
-Zeplin,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_zeplin_512x512.png,designer,uiux,management
-InVision,-,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_invision_512x512.png,designer,uiux,management
+Javascript,"자바스크립트는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 사이드 네트워크 프로그래밍에도 사용되고 있다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_javascript_512x512.png,developer,frontend,language
+Typescript,"타입스크립트는 자바스크립트의 슈퍼셋인 오픈소스 프로그래밍 언어이다. 마이크로소프트에서 개발, 유지하고 있으며 엄격한 문법을 지원한다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_typescript_512x512.png,developer,frontend,language
+Vue,Vue.js는 웹 애플리케이션의 사용자 인터페이스를 만들기 위해 사용하는 오픈 소스 프로그레시브 자바스크립트 프레임워크이다.,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_vuejs_512x512.png,developer,frontend,framework
+React,컴퓨팅에서 리액트는 자바스크립트 라이브러리의 하나로서 사용자 인터페이스를 만들기 위해 사용된다. 페이스북과 개별 개발자 및 기업들 공동체에 의해 유지보수된다. 리액트는 싱글 페이지나 모바일 애플리케이션의 개발 시 토대로 사용될 수 있다.,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_react_512x512.png,developer,frontend,framework
+Angular,"AngularJS는 자바스크립트 기반의 오픈 소스 프론트엔드 웹 애플리케이션 프레임워크의 하나로, 싱글 페이지 애플리케이션 개발 중에 마주치는 여러 문제들을 해결하기 위해 개발되었으며 주로 구글과 개별 커뮤니티, 여러 회사에 의해 유지보수되고 있다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_angular_512x512.png,developer,frontend,framework
+Polymer,Polymer는 웹 구성 요소를 사용하여 웹 응용 프로그램을 구축하기위한 오픈 소스 JavaScript 라이브러리입니다.,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_polymer_512x512.png,developer,frontend,framework
+Ember,Ember.js는 모델-뷰-뷰모델 패턴에 기반을 둔 오픈 소스 자바스크립트 웹 프레임워크이다. 공통 이디엄과 최상의 프랙티스를 프레임워크에 도입함으로써 개발자들이 스케일링이 가능한 싱글 페이지 웹 애플리케이션을 개발할 수 있게 한다.,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_ember.js_512x512.png,developer,frontend,framework
+jQuery,jQuery는 HTML의 클라이언트 사이드 조작을 단순화 하도록 설계된 크로스 플랫폼의 자바스크립트 라이브러리다.,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_jquery_512x512.png,developer,frontend,framework
+Kotlin,"코틀린은 JVM에서 동작하는 프로그래밍 언어이다. 2011년 7월, 젯브레인사가 공개하였다. 파일 확장자는 .kt 또는 .kts를 사용한다. 코틀린은 2019년 5월 7일 이후로 구글의 안드로이드 앱 개발에서 선호하는 언어가 되었다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_kotlin_512x512.png,developer,backend,language
+Java,자바는 썬 마이크로시스템즈의 제임스 고슬링과 다른 연구원들이 개발한 객체 지향적 프로그래밍 언어이다.,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_java_512x512.png,developer,backend,language
+Javascript,"자바스크립트는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 사이드 네트워크 프로그래밍에도 사용되고 있다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_javascript_512x512.png,developer,backend,language
+Python,"파이썬은 1991년 프로그래머인 귀도 반 로섬이 발표한 고급 프로그래밍 언어로, 플랫폼에 독립적이며 인터프리터식, 객체지향적, 동적 타이핑 대화형 언어이다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_python_512x512.png,developer,backend,language
+PHP,PHP는 프로그래밍 언어의 일종이다. 원래는 동적 웹 페이지를 만들기 위해 설계되었으며 이를 구현하기 위해 PHP로 작성된 코드를 HTML 소스 문서 안에 넣으면 PHP 처리 기능이 있는 웹 서버에서 해당 코드를 인식하여 작성자가 원하는 웹 페이지를 생성한다.,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_php_512x512.png,developer,backend,language
+Ruby,"루비는 마츠모토 유키히로가 개발한 동적 객체 지향 스크립트 프로그래밍 언어이다. 루비는 순수 객체 지향 언어라, 정수나 문자열 등을 포함한 데이터 형식 등 모든 것이 객체이다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_ruby_512x512.png,developer,backend,language
+C#,"C#는 마이크로소프트에서 개발한 객체 지향 프로그래밍 언어로, 닷넷 프레임워크의 한 부분으로 만들었으며 나중에 ECMA 와 ISO 의 표준으로 자리잡았다. C++와 자바의 문법과 비슷한 문법을 가지고 있다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_c%23_512x512.png,developer,backend,language
+Go,"Go는 2009년 구글이 개발한 프로그래밍 언어이다. 가비지 컬렉션 기능이 있고, 병행성을 잘 지원하는 컴파일 언어다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_go_512x512.png,developer,backend,language
+Typescript,"타입스크립트는 자바스크립트의 슈퍼셋인 오픈소스 프로그래밍 언어이다. 마이크로소프트에서 개발, 유지하고 있으며 엄격한 문법을 지원한다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_typescript_512x512.png,developer,backend,language
+Rust,"러스트는 모질라 리서치에서 개발한 범용 프로그래밍 언어이다. ""안전하고, 병렬적이며, 실용적인"" 언어로 디자인되었으며, 순수 함수형 프로그래밍, 액터 기반 병렬 프로그래밍, 명령형 프로그래밍, 객체 지향 프로그래밍 스타일을 지원한다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_rust_512x512.png,developer,backend,language
+Flask,"플라스크는 파이썬으로 작성된 마이크로 웹 프레임워크의 하나로, Werkzeug 툴킷과 Jinja2 템플릿 엔진에 기반을 둔다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_flask_512x512.png,developer,backend,framework
+Spring,스프링 프레임워크는 자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임워크로서 간단히 스프링이라고도 한다. 동적인 웹 사이트를 개발하기 위한 여러 가지 서비스를 제공하고 있다.,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_spring_512x512.png,developer,backend,framework
+Node.js,Node.js는 확장성 있는 네트워크 애플리케이션 개발에 사용되는 소프트웨어 플랫폼이다. 작성 언어로 자바스크립트를 활용하며 Non-blocking I/O와 단일 스레드 이벤트 루프를 통한 높은 처리 성능을 가지고 있다.,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_nodejs_512x512.png,developer,backend,framework
+.net,"닷넷 프레임워크는 마이크로소프트에서 개발한 윈도우 프로그램 개발 및 실행 환경이다. 네트워크 작업, 인터페이스 등의 많은 작업을 캡슐화하였고, 공통 언어 런타임이라는 이름의 가상 머신 위에서 작동한다. 오픈 소스 버전으로 닷넷 코어가 있다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_net_512x512.png,developer,backend,framework
+Spring-Boot,"스프링부트는 단독실행되는, 실행하기만 하면 되는 상용화 가능한 수준의, 스프링 기반 애플리케이션을 쉽게 만들어낼 수 있다. 최소한의 설정으로 스프링 플랫폼과 서드파티 라이브러리들을 사용할 수 있도록 하고 있다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_springboot_512x512.png,developer,backend,framework
+Django,"장고는 파이썬으로 작성된 오픈 소스 웹 애플리케이션 프레임워크로, 모델-뷰-컨트롤러 패턴을 따르고 있다. 현재는 장고 소프트웨어 재단에 의해 관리되고 있다. 고도의 데이터베이스 기반 웹사이트를 작성하는 데 있어서 수고를 더는 것이 장고의 주된 목표이다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_django_512x512.png,developer,backend,framework
+Laravel,"라라벨은 자유, 오픈 소스 PHP 웹 프레임워크의 하나로, 테일러 오트웰이 개발하였으며 모델-뷰-컨트롤러 아키텍처 패턴을 따라 웹 애플리케이션을 개발하기 위해 고안되었다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_laravel_512x512.png,developer,backend,framework
+Ruby on Rails,루비 온 레일즈는 루비로 작성된 MVC 패턴을 이용하는 오픈 소스 웹 프레임워크이다. 줄여서 레일즈라 불리기도 한다. 덴마크의 데이비드 하이네마이어 한슨 에 의해 시작되어 오픈 소스로 개발되고 있다.,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_rubyonrails_512x512.png,developer,backend,framework
+React Native,"Facebook에서 만든 오픈 소스 모바일 애플리케이션 프레임 워크입니다. 개발자가 기본 플랫폼 기능과 함께 React를 사용할 수 있도록하여 Android, iOS, 웹 및 UWP 용 애플리케이션을 개발하는 데 사용됩니다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_reactnative_512x512.png,developer,app,language
+Flutter,"플러터는 구글이 개발한 오픈 소스 모바일 애플리케이션 개발 프레임워크이다. 안드로이드, iOS용 애플리케이션 개발을 위해, 또 구글 푸크시아용 애플리케이션 개발의 주된 방식으로 사용된다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_flutter_512x512.png,developer,app,language
+Swift,스위프트는 애플의 iOS와 macOS를 위한 프로그래밍 언어로 2014년 6월 2일 애플 세계 개발자 회의에서 처음 소개되었다. 기존의 애플 운영체제용 언어인 오브젝티브-C와 함께 공존할 목적으로 만들어졌다. 오브젝티브-C와 마찬가지로 LLVM으로 빌드되고 같은 런타임을 공유한다.,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_swift_512x512.png,developer,app,language
+Objective-C,"오브젝티브-C는 C 프로그래밍 언어에 스몰토크 스타일의 메시지 구문을 추가한 객체 지향 언어이다. 현재, 이 언어는 애플의 매킨토시의 운영 체제인 OS X과 아이폰의 운영 체제인 iOS에서 사용되고 있다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_objectivec_512x512.png,developer,app,language
+Kotlin,"코틀린은 JVM에서 동작하는 프로그래밍 언어이다. 2011년 7월, 젯브레인사가 공개하였다. 파일 확장자는 .kt 또는 .kts를 사용한다. 코틀린은 2019년 5월 7일 이후로 구글의 안드로이드 앱 개발에서 선호하는 언어가 되었다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_kotlin_512x512.png,developer,app,language
+Java,자바는 썬 마이크로시스템즈의 제임스 고슬링과 다른 연구원들이 개발한 객체 지향적 프로그래밍 언어이다.,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_java_512x512.png,developer,app,language
+Sketch,"스케치는 프리랜서부터 세계 최대 규모의 팀에 이르기까지 백만 명 이상의 사람들이 사용하는 디자인 플랫폼이다. 스케치를 사용하여 아이디어 제작, 프로토타입 제작, 협업 및 실현이 가능하다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_sketch_512x512.png,designer,uiux,prototyping
+Overflow,"오버플로우는 디자인을 user flow로 도식화할 수 있다. 프레젠테이션 참여, 신속한 프로토타입, 설계 도구를 통합하여 공유할 수 있는 디자이너를 위한 맞춤 툴이다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_overflow_512x512.png,designer,uiux,prototyping
+Adobe,"어도비는 사용자에게 그래픽 디자인, 영상 편집, 웹 개발 응용 소프트웨어, 클라우드 서비스를 위한 기업 소프트웨어 제품군의 접근을 제공하는 어도비 시스템즈의 서비스이다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_adobe_512x512.png,designer,uiux,prototyping
+Protopie,프로토파이는 소프트웨어 코딩이 필요 없는 디지털 제품의 인터랙티브 프로토타이핑 앱이다.,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_protopie_512x512.png,designer,uiux,prototyping
+Figma,"Figma 툴 한 가지로 설계, 프로토타입 및 피드백 수집이 가능하다. 팀으로서 더 나은 제품을 구축할 수 있도록 돕는다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_figma_512x512.png,designer,uiux,prototyping
+Zeplin,"제플린은 프로덕트 팀을 위한 연결 공간이다. 핸드오프 디자인 및 스타일에 정확한 사양, 에셋, 코드 스니펫을 자동으로 적용한다.",https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_zeplin_512x512.png,designer,uiux,management
+InVision,인비전은 세계 최고의 사용자 경험을 제공하는 디지털 제품 디자인 플랫폼이다. 화면 전환을 쉽게 애니메이션화하고 마이크로 인터렉션을 추가하여 정적 화면을 작동하는 프로토타입으로 전환할 수 있다.,https://stack101-icon.s3.ap-northeast-2.amazonaws.com/stack%26company_icon/stack/stack_invision_512x512.png,designer,uiux,management
