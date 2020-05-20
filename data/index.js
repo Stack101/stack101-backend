@@ -162,7 +162,7 @@ const insertCompanies = async () => {
   await insertStacks();
   /* Company.stacks를 제외하고 회사정보 추가,
   참조관계에 맞는 ObjectId값을 companies, stacks에 추가 */
-  await insertCompanies().then(() => {
-    process.exit(0);
-  });
-})();
+  await insertCompanies();
+})().then(() => {
+  process.exit(0);
+});
